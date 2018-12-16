@@ -1,0 +1,111 @@
+<!--index.wxml-->
+<image src="../../images/p{{col}}.jpg" id="backimg"></image>
+
+<view class="container" >
+<canvas wx:if="{{end==true}}" class="radar-canvasfinal" canvas-id="radarCanvasfinal" disable-scroll="false" style="" />
+<cover-view id="over" wx:if="{{end==true}}">
+<canvas wx:if="{{end==true}}" class="radar-canvas" canvas-id="radarCanvas" disable-scroll="false" style="postion:absolute;top:{{canvastop}};" catchtouchstart="emitStart" catchtouchend="emitEnd">
+<!-- <cover-view class="resultbtn1"style=""   hidden='{{canvasHidden}}' ></cover-view> -->
+  <!-- <cover-view class="resultbtn2"bindtap='join' style="" hidden='{{canvasHidden}}'></cover-view> -->
+  <cover-image class="result" src="../../images/btn{{col}}.png" catchtouchstart="emitStart" catchtouchend="emitEnd"></cover-image>
+  <cover-view style="position:absolute;width:100%;height:100%;opacity:0.5;background:black;z-index:150;" hidden="{{modalHidden}}"></cover-view>
+  <cover-view id="modalbox"title="学推论坛报名" hidden="{{modalHidden}}" 
+  >
+  <cover-view id="title">欢迎报名学推论坛</cover-view>
+  <cover-view id="content"style=" color:black; font-weight:400;">你愿意参加12月的学推论坛么？</cover-view>
+  <cover-view id="content"style=" color:black; font-weight:400;">请点击下方二维码放大</cover-view>
+   <cover-view id="content"style=" color:black; font-weight:400;">扫描二维码进行报名!</cover-view>
+    <cover-view>
+      <cover-image class="image" bindtap='wenjuan' src="../../images/6.jpg"  style="position:relative;left:120rpx;width:380rpx;height:380rpx;"></cover-image>
+      <!-- <web-view src="https://nikelong.cf"></web-view> -->
+    </cover-view>
+   <cover-view id="close"bindtap="modalConfirm">close</cover-view>
+    
+   
+  </cover-view>
+ 
+  </canvas>
+
+  <!-- <view id="con">
+    <view id="c1">{{con1}}</view>
+    <view id="c2">{{con2}}</view>
+  </view> -->
+  
+  <!-- <view   style="postion:relative;top:30rpx;text-align:center;font-size:40rpx;font-weight:600;"hidden='{{canvasHidden}}'>欢迎报名学推论坛</view> -->
+  
+ 
+
+
+</cover-view>
+  <!-- 用户 openid -->
+  <!-- <view class="userinfo"> -->
+    <!-- <button
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{avatarUrl}})"
+    ></button>
+    <view>
+      
+      <text>{{userInfo.nickName}}</text>
+    </view> -->
+  
+  <!-- </view> -->
+<!-- <view hidden="{{confirmbox}}"> 
+  <text>测试你的科研属性</text>
+  <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" id="confirmbox">点我开始
+  </button>
+</view> -->
+
+
+<!-- <view class="QUES"  wx:if="{{hid==true&&confirmbox==true&&end==false}}"> -->
+
+
+<view class="ques" style="top:120rpx;" wx:if="{{idx==0&&hid==true&&confirmbox==true}}">
+     <view> 1、想象一下你正在实验室做实验，这时，你的男/女朋友给你打电话有事找你帮忙，你会： </view>
+</view>
+<view class="ques" style="top:120rpx;height={{H}}" wx:elif="{{idx==1&&hid==true}}">
+  <view> 2、假如你正在查阅文献，苦思冥想之际拿起手机看了一眼明天的课表，你突然意识到明天的体育课要跑一千五/三千了，那么你的心理状态是： </view>
+</view>
+<view class="ques" style="top:120rpx;height={{H}}" wx:elif="{{idx==2&&hid==true}}">
+  <view>3、如果你的实验室老板在你的桌上放上了一瓶酒和一个柠檬，你想到的是什么？</view>
+</view>
+<view class="ques" style="top:120rpx;height={{H}}" wx:elif="{{idx==3&&hid==true}}">
+  <view>4、假如“只有那些具有思辨能力的人才应该参与科研”为真，下列哪句话表达了相同的意思？</view>
+</view>
+<view class="ques" style="top:120rpx;height={{H}}"wx:elif="{{idx==4&&hid==true}}">
+  <view>5、一天深夜，你终于做完了实验，从实验室回到寝室，发现室友的电脑桌面换成以下图形，请问你第一眼看到的是箭头还是人像</view>
+  <image class="img" src="../../images/1.jpg" ></image>
+</view>
+<view class="ques" style="top:120rpx;height={{H}}" wx:elif="{{idx==5&&hid==true}}">
+  <view>6、如果有一天深夜你走出实验楼，你揉揉眼睛抬起头，模糊的视野里看见了以下的天空是下面的样子，请问你第一眼看到的是月亮还是人脸？   </view>
+  <image class="img" src="../../images/2.jpg" ></image>
+</view>
+<view class="ques" style="top:120rpx;height={{H}}"wx:elif="{{idx==6&&hid==true}}">
+  <view>7、看到下列图形，你最先想到的词是</view>
+  <image class="img" src="../../images/3.jpg" ></image>
+</view>
+<view class="ques" style="top:120rpx;height={{H}}"wx:elif="{{idx==7&&hid==true}}">
+  <view>8、今天帮师兄解决了一个重大问题，师兄为了感谢你，大气地决定送你一张由你选择具体数字的彩票，你思考良久决定彩票的末几位选用:</view>
+</view>
+<view class="ques" style="top:120rpx;height={{H}}"wx:elif="{{idx==8&&hid==true}}">
+  <view>9、看到这幅图，你的第一反应是：</view>
+  <image class="img" src="../../images/4.jpg" ></image>
+</view>
+<view class="ques" style="top:120rpx;height={{H}}"wx:elif="{{idx==9&&hid==true&&end==false}}">
+  <view>10、当你和科研结合在一起，你认为会产生</view>
+</view>
+<!-- </view> -->
+
+
+
+
+<view class="SELECT" hidden='{{hidbtn}}'>
+<view style="position:relative;"hover-class='btn-hover'hover-stay-time='100' class="btn" bindtap="idxAddA" hidden='{{hidbtn}}'>A、{{selectA}}</view>
+<view style="position:relative;"hover-class='btn-hover'hover-stay-time='100' class="btn" bindtap="idxAddB" hidden='{{hidbtn}}'>B、{{selectB}}</view>
+<view style="position:relative;top:{{btntop}};"hover-stay-time='100'hover-class='btn-hover' class="btnx" bindtap="idxAddC" hidden='{{hidbtnx}}'>C、{{selectC}}</view>
+<view style="position:relative;top:{{btntop}};"hover-stay-time='100'hover-class='btn-hover' class="btnx" bindtap="idxAddD" hidden='{{hidbtnx}}'>D、{{selectD}}</view>
+</view>
+
+
+</view>

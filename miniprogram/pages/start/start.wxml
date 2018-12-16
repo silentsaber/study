@@ -1,0 +1,12 @@
+<view class="container" >
+<!-- <image src="../../images/背景图1.png" id="backimg"></image> -->
+<image src="../../images/start.jpg" id="backimg"></image>
+<view  id="btnstart" bindtap="startTest" hover-class='btn-hover' ></view>
+<!-- <view class="navbar-brand" id="logo" href="#">测试你的科研属性</view> -->
+<!-- <button id="btnstart" bindtap="startTest" >Start</button> -->
+<!-- <view class="quesback"></view>
+<view class="border1" ></view>
+<view class="border2" ></view>
+<view class="border3" ></view>
+<view class="border4" ></view> -->
+</view>
